@@ -61,8 +61,9 @@ silfcm<-silhouette(fcm$cluster,dist(clusteringVar))
 mean(silfcm[,3])
 plotcluster(clusteringVar,fcm$cluster) #grafica la ubicacion de los clusters
 
+
 #Clustering jerárquico
-hc<-hclust(dist(iris[,1:4])) #Genera el clustering jerárquico de los datos
+hc<-hclust(dist(clusteringVar)) #Genera el clustering jerárquico de los datos
 plot(hc) #Genera el dendograma
 rect.hclust(hc,k=3) #Dibuja el corte de los grupos en el gráfico
 groups<-cutree(hc,k=3) #corta el dendograma, determinando el grupo de cada fila
@@ -74,5 +75,5 @@ g2HC<-datos[datos$gruposHC==2,]
 g3HC<-datos[datos$gruposHC==3,]
 
 #Método de la silueta para clustering jerárquico
-silch<-silhouette(groups,dist(iris[,1:4]))
-mean(silch[,3]) #0.51, no es la mejor partición pero no está mal
+silch<-silhouette(groups,dist(clusteringVar))
+mean(silch[,3]) 
