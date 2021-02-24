@@ -1,13 +1,11 @@
----
-  title: "Hoja2"
-author: "Grupo 5"
-date: "2/21/2021"
-output: html_document
----
+#title: "Hoja2"
+#author: "Grupo 5"
+#date: "2/21/2021"
+
   
   
   
-  library(dplyr)
+library(dplyr)
 library(cluster) # Para calcular la silueta
 library(e1071)# Para cmeans
 library(mclust) # Mixtures of gaussians
